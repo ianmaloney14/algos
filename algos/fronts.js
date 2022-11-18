@@ -33,14 +33,29 @@ class LinkedList {
             return this.head.data
         }
     }
+    display() {
+        let list = ''
+        if (this.head == null) {
+            return "list is empty"
+        }
+        list += this.head.data
+        let runner = this.head.next
+        while (runner != null) {
+            list += ", " + runner.data
+            runner = runner.next
+        }
+        return list
+    }
 }
 
 let SLL = new LinkedList()
 
-console.log(SLL.front())
+
 SLL.addFront(14)
 SLL.addFront(21)
 SLL.addFront(94)
+console.log(SLL.display())
+// console.log(SLL.front())
 // console.log(SLL)
 // SLL.removeFront()
 // console.log(SLL)
